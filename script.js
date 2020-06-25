@@ -10,7 +10,11 @@ const words = ['typing','youtube','word','minecraft','skyrim','programming','sal
 'about','contact','may','april','july','october','november','summer','biology','chemistry','physics','education',
 'teacher','cube','laptop','robot','legacy','steam','origin','throne','water','blender','car','theory','random',
 'star','war','google','asia','america','europe','russia','usa','germany','spain','italy','china','japan','korea',
-'rainbow','potato','melon','watermelon','piano','lamp'];;
+'rainbow','potato','melon','watermelon','piano','lamp','style','cup','watch','idea','paper','table','chair',
+'thumb','desktop','score','event','interval','function','passive','active','cloud','cartoon','cat','dog',
+'plane','ship','integration','disintegration','last','god','plank','simple','hard','normal','easy','language',
+'staff','stuff','environment','start','finish','ask','reward','task','transition','spanish','english',
+'russian','country','state','electron'];
 
 let score = 0;
 let time = 60;

@@ -74,3 +74,11 @@ body{
 	transform: translate(-70%,-50%);
 	font-size: 30px;
 }
+
+.score-counter{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-80%,-50%);
+    font-size: 30px;
+}

@@ -21,28 +21,29 @@ let score = 0;
 let time = 60;
 
 button.addEventListener('click', function(){
-    score_counter.innerHTML = '0';
-    word.innerHTML = words[Math.floor(Math.random() * words.length)];
-    let Interval = setInterval(function(){
-	    if (time > 0) {
-		    time--;
-		    time_counter.innerHTML = `${time.toString()} s`;
-		    input.oninput = function(){
-		        if (input.value === word.innerHTML) {
-			        word.innerHTML = words[Math.floor(Math.random() * words.length)];
-			        input.value = "";
-                    score += 1;
-                    score_counter.innerHTML = score;
-			    }
-		    }
-	    }else if(time === 0) {
-            alert('Your score is ' + score);
-            score_counter.innerHTML = '0';
-		    time_counter.innerHTML = "60 s";
-            time = 60;
-            score = 0;
-		    word.innerHTML = "";
-		    clearInterval(Interval);
-	    }
-    },1000);
+	if (time === 60){
+		word.innerHTML = words[Math.floor(Math.random() * words.length)];
+		let Interval = setInterval(function(){
+			if (time > 0) {
+				time--;
+				time_counter.innerHTML = `${time.toString()} s`;
+				input.oninput = function(){
+					if (input.value === word.innerHTML) {
+						word.innerHTML = words[Math.floor(Math.random() * words.length)];
+						input.value = "";
+						score += 1;
+						score_counter.innerHTML = score;
+					}
+				}
+			}else if(time === 0) {
+				alert('Your score is ' + score);
+				score_counter.innerHTML = '0';
+				time_counter.innerHTML = "60 s";
+				time = 60;
+				score = 0;
+				word.innerHTML = "[]";
+				clearInterval(Interval);
+			}
+		},1000);
+	}
 });

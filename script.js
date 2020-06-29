@@ -23,6 +23,8 @@ let time = 60;
 button.addEventListener('click', function(){
 	if (time === 60){
 		word.innerHTML = words[Math.floor(Math.random() * words.length)];
+		input.style.display = 'block';
+		button.style.display = 'none';
 		let Interval = setInterval(function(){
 			if (time > 0) {
 				time--;
@@ -30,7 +32,7 @@ button.addEventListener('click', function(){
 				input.oninput = function(){
 					if (input.value === word.innerHTML) {
 						word.innerHTML = words[Math.floor(Math.random() * words.length)];
-						input.value = "";
+						input.value = '';
 						score += 1;
 						score_counter.innerHTML = score;
 					}
@@ -41,7 +43,10 @@ button.addEventListener('click', function(){
 				time_counter.innerHTML = "60 s";
 				time = 60;
 				score = 0;
-				word.innerHTML = "[]";
+				word.innerHTML = '';
+				input.value = '';
+				input.style.display = 'none';
+				button.style.display = 'block';
 				clearInterval(Interval);
 			}
 		},1000);

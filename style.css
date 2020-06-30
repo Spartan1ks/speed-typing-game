@@ -57,17 +57,7 @@ body{
 	
 	font-size: 30px;
 
-	display: none;
-}
-
-#button{
-	width: 100px;
-	height: 25px;
-
-	border: none;
-	border-radius: 15px;
-
-	font-size: 15px;
+	/*display: none;*/
 }
 
 #button:hover{

@@ -1,6 +1,5 @@
 const time_counter = document.getElementById('time_counter');
 const word = document.getElementById('word');
-const button = document.getElementById('button');
 const input = document.getElementById('input');
 const settime = document.getElementById('settime');
 const score_counter = document.getElementById('score-counter');
@@ -20,11 +19,9 @@ const words = ['typing','youtube','word','minecraft','skyrim','programming','sal
 let score = 0;
 let time = 60;
 
-button.addEventListener('click', function(){
+input.addEventListener('click', function(){
 	if (time === 60){
 		word.innerHTML = words[Math.floor(Math.random() * words.length)];
-		input.style.display = 'block';
-		button.style.display = 'none';
 		let Interval = setInterval(function(){
 			if (time > 0) {
 				time--;
@@ -45,10 +42,9 @@ button.addEventListener('click', function(){
 				score = 0;
 				word.innerHTML = '';
 				input.value = '';
-				input.style.display = 'none';
-				button.style.display = 'block';
 				clearInterval(Interval);
 			}
 		},1000);
 	}
 });
+

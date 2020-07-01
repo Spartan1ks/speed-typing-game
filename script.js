@@ -2,7 +2,8 @@ const time_counter = document.getElementById('time_counter');
 const word = document.getElementById('word');
 const input = document.getElementById('input');
 const settime = document.getElementById('settime');
-const score_counter = document.getElementById('score-counter');
+const score_counter = document.getElementById('score_counter');
+const hi_score_counter = document.getElementById('hi_score_counter');
 const words = ['typing','youtube','word','minecraft','skyrim','programming','sally','sam','hand','student','head',
 'pank','rock','bird','rain','terrain','school','study','book','face','work','facebook','book','ukraine',
 'sound','paragon','overwatch','egor','letov','bald','john','sense','razer','mouse','keyboard','quite',
@@ -16,8 +17,14 @@ const words = ['typing','youtube','word','minecraft','skyrim','programming','sal
 'staff','stuff','environment','start','finish','ask','reward','task','transition','spanish','english',
 'russian','country','state','electron'];
 
+let hi_score = 0;
 let score = 0;
 let time = 60;
+
+if(localStorage.getItem('hi') !== null){
+	hi_score = localStorage.getItem('hi');
+	hi_score_counter.innerHTML = hi_score;
+}
 
 input.addEventListener('click', function(){
 	if (time === 60){
@@ -35,7 +42,12 @@ input.addEventListener('click', function(){
 					}
 				}
 			}else if(time === 0) {
-				alert('Your score is ' + score);
+				alert(`Your score is ${score}`);
+				if(score > hi_score){
+					hi_score = score;
+					hi_score_counter.innerHTML = score;
+					localStorage.setItem('hi',hi_score);
+				}
 				score_counter.innerHTML = '0';
 				time_counter.innerHTML = "60 s";
 				time = 60;

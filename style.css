@@ -82,9 +82,15 @@ body{
 	padding: 50px;
 }
 
-.score-counter{
+.score_counter{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
 	font-size: 30px;
+}
+
+.hi_score{
+	font-size: 30px;
+	position: absolute;
+	right: 50px;
 }

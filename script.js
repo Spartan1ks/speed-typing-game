@@ -1,3 +1,6 @@
+const die_sound = document.getElementById('die');
+const point_sound = document.getElementById('point');
+const mission_complete = document.getElementById('mission_complete');
 const time_counter = document.getElementById('time_counter');
 const word = document.getElementById('word');
 const input = document.getElementById('input');
@@ -39,6 +42,8 @@ input.addEventListener('click', function(){
 						input.value = '';
 						score += 1;
 						score_counter.innerHTML = score;
+						point_sound.currentTime = 0;
+						point_sound.play();
 					}
 				}
 			}else if(time === 0) {
@@ -47,6 +52,12 @@ input.addEventListener('click', function(){
 					hi_score = score;
 					hi_score_counter.innerHTML = score;
 					localStorage.setItem('hi',hi_score);
+
+					mission_complete.currentTime = 0;
+					mission_complete.play();
+				}else{
+					die_sound.currentTime = 0;
+					die_sound.play();
 				}
 				score_counter.innerHTML = '0';
 				time_counter.innerHTML = "60 s";
@@ -55,8 +66,10 @@ input.addEventListener('click', function(){
 				word.innerHTML = '';
 				input.value = '';
 				clearInterval(Interval);
+
+				input.disabled = true;
+				input.disabled = false;
 			}
 		},1000);
 	}
 });
-
